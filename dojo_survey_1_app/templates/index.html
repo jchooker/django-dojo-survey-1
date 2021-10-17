@@ -12,19 +12,27 @@
 </head>
 <body>
     <div id="wrapper">
-        <!-- <div id="survey-menu"> -->
-            <form id="survey-menu" action = "/result" method="POST">
-                <label>Your Name: </label>
-                <input type="text" id="your_name" name="your_name">
-                <label>Dojo Location: </label>
-                <input type="text" id="your_name" name="your_name">
-                <label>Favorite Language: </label>
-                <input type="text" id="your_name" name="your_name">
+        <form id="survey-menu" action = "/result" method="POST">
+            <div id="menu-upper-half">
+                <div id="menu-left">
+                    <label name="your_name">Your Name: </label>
+                    <label name="location">Dojo Location: </label>
+                    <label name ="fav_lang">Favorite Language: </label>
+                </div>
+                <div id="menu-right">
+                    <input type="text" id="your_name" name="your_name">
+                    <input type="text" id="your_name" name="location">
+                    <input type="text" id="your_name" name="fav_lang">
+                </div>
+            </div>
+            <div id="menu-lower-half">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Comment(optional):</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Leave comment here">
                 </div>
-            </form>
+            </div>
+            
+        </form>
         <!-- </div> -->
     </div>
 </body>
