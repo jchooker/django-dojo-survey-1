@@ -5,10 +5,12 @@ def index(request):
 
 def result(request):
     yr_name=request.POST['your_name']
+    print(request.POST)
     loc=request.POST['location']
     fv_lang=request.POST['fav_lang']
+    comm=request.POST['comment']
     context= {
         'result': request.POST
     }
-    return render(result, 'result.html', context)
+    return render(request, 'result.html', context)
 

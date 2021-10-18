@@ -12,7 +12,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <form id="survey-menu" action = "/result" method="POST">
+        <form class="survey-menu" action = "/result" method="POST">
         {% csrf_token %}
             <div id="menu-upper-half">
                 <div id="menu-left">
@@ -43,7 +43,7 @@
             <div id="menu-lower-half">
                 <div class="col-md-14">
                     <label for="exampleFormControlInput1" class="form-label">Comment(optional):</label>
-                    <textarea rows=4 class="form-control" id="exampleFormControlInput1 ex4" placeholder="Leave comment here"></textarea>
+                    <textarea rows=4 class="form-control" id="exampleFormControlInput1 ex4" placeholder="Leave comment here" name="comment"></textarea>
                 </div>
             </div>
             <input class="btn btn-primary" type="submit" value="Submit">
