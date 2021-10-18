@@ -6,33 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Index</title>
     <!-- CSS only -->
-    {% load static%}
+    {% load static %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
     <div id="wrapper">
         <form id="survey-menu" action = "/result" method="POST">
+        {% csrf_token %}
             <div id="menu-upper-half">
                 <div id="menu-left">
-                    <label name="your_name">Your Name: </label>
-                    <label name="location">Dojo Location: </label>
-                    <label name ="fav_lang">Favorite Language: </label>
+                    <label class="form-label" name="your_name">Your Name: </label>
+                    <label class="form-label" name="location">Dojo Location: </label>
+                    <label class="form-label" name ="fav_lang">Favorite Language: </label>
                 </div>
                 <div id="menu-right">
-                    <input type="text" id="your_name" name="your_name">
-                    <input type="text" id="your_name" name="location">
-                    <input type="text" id="your_name" name="fav_lang">
+                    <input type="text" id="your_name" class="form-control" name="your_name">
+                    <select id="location" class="form-control" name="location">
+                        <option>San Jose, CA</option>
+                        <option>Bellevue, WA</option>
+                        <option>Boise, ID</option>
+                        <option>Chicago, IL</option>
+                        <option>Los Angeles, CA</option>
+                        <option>Online</option>
+                    </select>
+                    <select id="fav_lang" class="form-control" name="fav_lang">
+                        <option>Python</option>
+                        <option>Perl</option>
+                        <option>C++</option>
+                        <option>Java</option>
+                        <option>C#</option>
+                        <option>Ruby</option>
+                    </select>
                 </div>
             </div>
             <div id="menu-lower-half">
-                <div class="mb-3">
+                <div class="col-md-14">
                     <label for="exampleFormControlInput1" class="form-label">Comment(optional):</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Leave comment here">
+                    <textarea rows=4 class="form-control" id="exampleFormControlInput1 ex4" placeholder="Leave comment here"></textarea>
                 </div>
             </div>
-            
+            <input class="btn btn-primary" type="submit" value="Submit">
         </form>
+        
         <!-- </div> -->
     </div>
 </body>
